@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 final class UIKitController: RootViewController<UIKitView> {
   
   let viewModel: UIKitViewModel
