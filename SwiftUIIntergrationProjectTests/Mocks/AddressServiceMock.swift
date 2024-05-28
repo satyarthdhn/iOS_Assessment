@@ -14,7 +14,6 @@ import RxSwift
 @testable import SwiftUIIntergrationProject
 
 extension AddressService {
-  //static var mock = AddressService(coordinates: coordinatesMock, asyncCoordinate: asyncCoordinateMock, coordinatePublisher: coordinatePubMock, coordinateRX: coordinateObservableMock)
   static var mock = AddressService()
 }
 
