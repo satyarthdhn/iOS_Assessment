@@ -18,6 +18,8 @@
 		8CE8CF142C066693000D8590 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF102C066693000D8590 /* WeatherServiceMock.swift */; };
 		8CE8CF172C06692E000D8590 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF152C06692E000D8590 /* RootViewController.swift */; };
 		8CE8CF182C06692E000D8590 /* Listenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF162C06692E000D8590 /* Listenable.swift */; };
+		8CE8CF1A2C066A84000D8590 /* UIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF192C066A83000D8590 /* UIKitView.swift */; };
+		8CE8CF1C2C066A9C000D8590 /* UIKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF1B2C066A9B000D8590 /* UIKitViewModel.swift */; };
 		9B0033422BFED3CF0057F235 /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0033412BFED3CF0057F235 /* SimpleError.swift */; };
 		9B1FE3652BC0A09200F0A259 /* SampleAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */; };
 		9B1FE3672BC0A0FD00F0A259 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */; };
@@ -90,6 +92,8 @@
 		8CE8CF102C066693000D8590 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
 		8CE8CF152C06692E000D8590 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8CE8CF162C06692E000D8590 /* Listenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listenable.swift; sourceTree = "<group>"; };
+		8CE8CF192C066A83000D8590 /* UIKitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitView.swift; sourceTree = "<group>"; };
+		8CE8CF1B2C066A9B000D8590 /* UIKitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitViewModel.swift; sourceTree = "<group>"; };
 		9B0033412BFED3CF0057F235 /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAddresses.swift; sourceTree = "<group>"; };
 		9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -384,7 +388,9 @@
 		9BD0A9002BC088CA00953018 /* UIKitReactiveSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8CE8CF1B2C066A9B000D8590 /* UIKitViewModel.swift */,
 				9BD0A9012BC08ADA00953018 /* UIKitController.swift */,
+				8CE8CF192C066A83000D8590 /* UIKitView.swift */,
 				8CE8CF162C06692E000D8590 /* Listenable.swift */,
 				8CE8CF152C06692E000D8590 /* RootViewController.swift */,
 			);
@@ -652,6 +658,7 @@
 				9B1FE3652BC0A09200F0A259 /* SampleAddresses.swift in Sources */,
 				9B1FE3862BC507C400F0A259 /* SwiftUIView.swift in Sources */,
 				9BD0A8ED2BBE1C7100953018 /* MainMenuView.swift in Sources */,
+				8CE8CF1C2C066A9C000D8590 /* UIKitViewModel.swift in Sources */,
 				9BBD8CFA2BBC560F00A5F295 /* ViewController.swift in Sources */,
 				9BBD8CF62BBC560F00A5F295 /* AppDelegate.swift in Sources */,
 				9B1FE38E2BC5D63200F0A259 /* SwiftUIController.swift in Sources */,
@@ -659,6 +666,7 @@
 				9B1FE3702BC4996C00F0A259 /* Functions.swift in Sources */,
 				9B1FE3932BC5DAB700F0A259 /* CurrentWeatherJSONDataMock.swift in Sources */,
 				9B1FE3762BC49BD000F0A259 /* WeatherJSONData.swift in Sources */,
+				8CE8CF1A2C066A84000D8590 /* UIKitView.swift in Sources */,
 				9BBD8CF82BBC560F00A5F295 /* SceneDelegate.swift in Sources */,
 				9B1FE3692BC0EE0500F0A259 /* ForecastJSONData.swift in Sources */,
 				9B0033422BFED3CF0057F235 /* SimpleError.swift in Sources */,
