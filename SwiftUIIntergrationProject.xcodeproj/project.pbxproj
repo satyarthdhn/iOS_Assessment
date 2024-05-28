@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		0743EC90E365CD0371576D3B /* Pods_SwiftUIIntergrationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD30D15C17897DD0978479A4 /* Pods_SwiftUIIntergrationProject.framework */; };
 		1BDFD9B50F177F960B161013 /* Pods_SwiftUIIntergrationProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4D586BFE587C11B120D146 /* Pods_SwiftUIIntergrationProjectTests.framework */; };
-		8CE8CF022C065DB7000D8590 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF012C065DB7000D8590 /* WeatherServiceMock.swift */; };
 		8CE8CF062C0662E0000D8590 /* CurrentWeatherJSONDataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */; };
 		8CE8CF072C0662E0000D8590 /* ForecastWeatherMockJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */; };
 		8CE8CF0B2C0663B6000D8590 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF092C0663B6000D8590 /* Localizable.strings */; };
 		8CE8CF0D2C06652F000D8590 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF0C2C06652F000D8590 /* NetworkService.swift */; };
+		8CE8CF122C066693000D8590 /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF0E2C066693000D8590 /* Mockable.swift */; };
+		8CE8CF132C066693000D8590 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF0F2C066693000D8590 /* NetworkServiceMock.swift */; };
+		8CE8CF142C066693000D8590 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF102C066693000D8590 /* WeatherServiceMock.swift */; };
 		9B0033422BFED3CF0057F235 /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0033412BFED3CF0057F235 /* SimpleError.swift */; };
 		9B1FE3652BC0A09200F0A259 /* SampleAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */; };
 		9B1FE3672BC0A0FD00F0A259 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */; };
@@ -77,11 +79,13 @@
 /* Begin PBXFileReference section */
 		473511158DF6813735522ED3 /* Pods-SwiftUIIntergrationProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIIntergrationProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIIntergrationProjectTests/Pods-SwiftUIIntergrationProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4D586BFE587C11B120D146 /* Pods_SwiftUIIntergrationProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIIntergrationProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CE8CF012C065DB7000D8590 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
 		8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeatherJSONDataMock.json; sourceTree = "<group>"; };
 		8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ForecastWeatherMockJSON.json; sourceTree = "<group>"; };
 		8CE8CF082C0663B6000D8590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CE8CF0C2C06652F000D8590 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8CE8CF0E2C066693000D8590 /* Mockable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		8CE8CF0F2C066693000D8590 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		8CE8CF102C066693000D8590 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
 		9B0033412BFED3CF0057F235 /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAddresses.swift; sourceTree = "<group>"; };
 		9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -195,6 +199,16 @@
 				8CE8CF092C0663B6000D8590 /* Localizable.strings */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		8CE8CF112C066693000D8590 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				8CE8CF0E2C066693000D8590 /* Mockable.swift */,
+				8CE8CF0F2C066693000D8590 /* NetworkServiceMock.swift */,
+				8CE8CF102C066693000D8590 /* WeatherServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		9B0033402BFED3C60057F235 /* Errors */ = {
@@ -312,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBD8D0C2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift */,
-				8CE8CF012C065DB7000D8590 /* WeatherServiceMock.swift */,
+				8CE8CF112C066693000D8590 /* Mocks */,
 			);
 			path = SwiftUIIntergrationProjectTests;
 			sourceTree = "<group>";
@@ -656,9 +670,11 @@
 			files = (
 				9BAA25792BC7815F00AA42B3 /* AddressServiceMock.swift in Sources */,
 				9B1FE3A92BC63F0300F0A259 /* EnvironmentMock.swift in Sources */,
+				8CE8CF142C066693000D8590 /* WeatherServiceMock.swift in Sources */,
+				8CE8CF132C066693000D8590 /* NetworkServiceMock.swift in Sources */,
+				8CE8CF122C066693000D8590 /* Mockable.swift in Sources */,
 				9BBD8D0D2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift in Sources */,
 				9BAA25772BC77D6B00AA42B3 /* TestObserver.swift in Sources */,
-				8CE8CF022C065DB7000D8590 /* WeatherServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
