@@ -19,7 +19,11 @@ extension UIViewController {
   }
   
   private func navigateUIKitView() {
-    let controller = UIKitController()
+    let currentAddress = Addresses.first ?? ""
+    let weatherService = WeatherService(networkService: NetworkService(), weatherServiceURL: WeatherServiceURL())
+    let viewModel = UIKitViewModel(weatherService: weatherService,
+                                   currentAddress: currentAddress)
+    let controller = UIKitController(viewModel: viewModel)
     navigationController?.pushViewController(controller, animated: true)
   }
   

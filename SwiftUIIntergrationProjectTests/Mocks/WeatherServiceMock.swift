@@ -9,5 +9,6 @@ import Foundation
 @testable import SwiftUIIntergrationProject
 
 extension WeatherService {
-  static var mock = WeatherService()
+  static var mock = WeatherService(networkService: NetworkServiceMock(),
+                                   weatherServiceURL: WeatherServiceMockURL())
 }

@@ -5,3 +5,10 @@
   Created by Satyarth Kumar Prasad on 28/05/24.
   
 */
+
+"current-temp" = "Current temperature1 : %fF";
+"address-numbered" = "Address %d";
+"temperature-value" = "Temperature: %fF";
+"failed-to-load" = "Failed to load data";
+"failed-to-parse" = "Failed to parse data";
+"address-not-correct" = "Address does not seem to be correct";
