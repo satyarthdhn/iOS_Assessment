@@ -13,6 +13,7 @@
 		8CE8CF062C0662E0000D8590 /* CurrentWeatherJSONDataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */; };
 		8CE8CF072C0662E0000D8590 /* ForecastWeatherMockJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */; };
 		8CE8CF0B2C0663B6000D8590 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF092C0663B6000D8590 /* Localizable.strings */; };
+		8CE8CF0D2C06652F000D8590 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF0C2C06652F000D8590 /* NetworkService.swift */; };
 		9B0033422BFED3CF0057F235 /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0033412BFED3CF0057F235 /* SimpleError.swift */; };
 		9B1FE3652BC0A09200F0A259 /* SampleAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */; };
 		9B1FE3672BC0A0FD00F0A259 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */; };
@@ -80,6 +81,7 @@
 		8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeatherJSONDataMock.json; sourceTree = "<group>"; };
 		8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ForecastWeatherMockJSON.json; sourceTree = "<group>"; };
 		8CE8CF082C0663B6000D8590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CE8CF0C2C06652F000D8590 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		9B0033412BFED3CF0057F235 /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAddresses.swift; sourceTree = "<group>"; };
 		9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -375,6 +377,7 @@
 				9BAA25782BC7815F00AA42B3 /* AddressServiceMock.swift */,
 				9B1FE3AB2BC6F49600F0A259 /* WeatherService.swift */,
 				9B1FE3AD2BC6F4B000F0A259 /* WeatherServiceURL.swift */,
+				8CE8CF0C2C06652F000D8590 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				9B1FE3AC2BC6F49600F0A259 /* WeatherService.swift in Sources */,
 				9B1FE3782BC4CD1200F0A259 /* Reactive+UIKit.swift in Sources */,
 				9B1FE3672BC0A0FD00F0A259 /* AddressService.swift in Sources */,
+				8CE8CF0D2C06652F000D8590 /* NetworkService.swift in Sources */,
 				9BD0A8EB2BBE1A4400953018 /* OpenWeatherAPIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
