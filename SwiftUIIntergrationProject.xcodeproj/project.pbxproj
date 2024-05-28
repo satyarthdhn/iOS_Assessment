@@ -10,6 +10,8 @@
 		0743EC90E365CD0371576D3B /* Pods_SwiftUIIntergrationProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD30D15C17897DD0978479A4 /* Pods_SwiftUIIntergrationProject.framework */; };
 		1BDFD9B50F177F960B161013 /* Pods_SwiftUIIntergrationProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4D586BFE587C11B120D146 /* Pods_SwiftUIIntergrationProjectTests.framework */; };
 		8CE8CF022C065DB7000D8590 /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF012C065DB7000D8590 /* WeatherServiceMock.swift */; };
+		8CE8CF062C0662E0000D8590 /* CurrentWeatherJSONDataMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */; };
+		8CE8CF072C0662E0000D8590 /* ForecastWeatherMockJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */; };
 		9B0033422BFED3CF0057F235 /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0033412BFED3CF0057F235 /* SimpleError.swift */; };
 		9B1FE3652BC0A09200F0A259 /* SampleAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */; };
 		9B1FE3672BC0A0FD00F0A259 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */; };
@@ -74,6 +76,8 @@
 		473511158DF6813735522ED3 /* Pods-SwiftUIIntergrationProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUIIntergrationProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUIIntergrationProjectTests/Pods-SwiftUIIntergrationProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4D586BFE587C11B120D146 /* Pods_SwiftUIIntergrationProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIIntergrationProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE8CF012C065DB7000D8590 /* WeatherServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceMock.swift; sourceTree = "<group>"; };
+		8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrentWeatherJSONDataMock.json; sourceTree = "<group>"; };
+		8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ForecastWeatherMockJSON.json; sourceTree = "<group>"; };
 		9B0033412BFED3CF0057F235 /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAddresses.swift; sourceTree = "<group>"; };
 		9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -172,6 +176,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8CE8CF052C0662DF000D8590 /* MockJSONs */ = {
+			isa = PBXGroup;
+			children = (
+				8CE8CF032C0662DF000D8590 /* CurrentWeatherJSONDataMock.json */,
+				8CE8CF042C0662DF000D8590 /* ForecastWeatherMockJSON.json */,
+			);
+			path = MockJSONs;
+			sourceTree = "<group>";
+		};
 		9B0033402BFED3C60057F235 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +275,7 @@
 		9BBD8CF42BBC560F00A5F295 /* SwiftUIIntergrationProject */ = {
 			isa = PBXGroup;
 			children = (
+				8CE8CF052C0662DF000D8590 /* MockJSONs */,
 				9B0033402BFED3C60057F235 /* Errors */,
 				9B7651CF2BEF08F2009CCC56 /* Resources */,
 				9B327CC12BC8CE120031A858 /* ModifiersExtensions */,
@@ -484,7 +498,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BBD8D022BBC561000A5F295 /* LaunchScreen.storyboard in Resources */,
+				8CE8CF062C0662E0000D8590 /* CurrentWeatherJSONDataMock.json in Resources */,
 				9BBD8CFF2BBC561000A5F295 /* Assets.xcassets in Resources */,
+				8CE8CF072C0662E0000D8590 /* ForecastWeatherMockJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
