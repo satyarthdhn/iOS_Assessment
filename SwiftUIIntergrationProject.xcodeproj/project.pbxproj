@@ -23,6 +23,7 @@
 		8CE8CF1E2C066CEA000D8590 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF1D2C066CE9000D8590 /* Extensions.swift */; };
 		8CE8CF202C066DEE000D8590 /* WeatherServiceMockURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF1F2C066DEE000D8590 /* WeatherServiceMockURL.swift */; };
 		8CE8CF222C0670E7000D8590 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF212C0670E7000D8590 /* ButtonCollectionViewCell.swift */; };
+		8CE8CF242C067310000D8590 /* UIKitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8CF232C067310000D8590 /* UIKitViewModelTests.swift */; };
 		9B0033422BFED3CF0057F235 /* SimpleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0033412BFED3CF0057F235 /* SimpleError.swift */; };
 		9B1FE3652BC0A09200F0A259 /* SampleAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */; };
 		9B1FE3672BC0A0FD00F0A259 /* AddressService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */; };
@@ -50,7 +51,6 @@
 		9BBD8CFA2BBC560F00A5F295 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD8CF92BBC560F00A5F295 /* ViewController.swift */; };
 		9BBD8CFF2BBC561000A5F295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD8CFE2BBC561000A5F295 /* Assets.xcassets */; };
 		9BBD8D022BBC561000A5F295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BBD8D002BBC561000A5F295 /* LaunchScreen.storyboard */; };
-		9BBD8D0D2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD8D0C2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift */; };
 		9BBD8D172BBC561000A5F295 /* SwiftUIIntergrationProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD8D162BBC561000A5F295 /* SwiftUIIntergrationProjectUITests.swift */; };
 		9BBD8D192BBC561000A5F295 /* SwiftUIIntergrationProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD8D182BBC561000A5F295 /* SwiftUIIntergrationProjectUITestsLaunchTests.swift */; };
 		9BBD8D282BBC5B0300A5F295 /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 9BBD8D272BBC5B0300A5F295 /* PreviewSnapshots */; };
@@ -100,6 +100,7 @@
 		8CE8CF1D2C066CE9000D8590 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8CE8CF1F2C066DEE000D8590 /* WeatherServiceMockURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherServiceMockURL.swift; sourceTree = "<group>"; };
 		8CE8CF212C0670E7000D8590 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		8CE8CF232C067310000D8590 /* UIKitViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitViewModelTests.swift; sourceTree = "<group>"; };
 		9B0033412BFED3CF0057F235 /* SimpleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleError.swift; sourceTree = "<group>"; };
 		9B1FE3642BC0A09200F0A259 /* SampleAddresses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAddresses.swift; sourceTree = "<group>"; };
 		9B1FE3662BC0A0FD00F0A259 /* AddressService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -128,7 +129,6 @@
 		9BBD8D012BBC561000A5F295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BBD8D032BBC561000A5F295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BBD8D082BBC561000A5F295 /* SwiftUIIntergrationProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIIntergrationProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BBD8D0C2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIIntergrationProjectTests.swift; sourceTree = "<group>"; };
 		9BBD8D122BBC561000A5F295 /* SwiftUIIntergrationProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIIntergrationProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBD8D162BBC561000A5F295 /* SwiftUIIntergrationProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIIntergrationProjectUITests.swift; sourceTree = "<group>"; };
 		9BBD8D182BBC561000A5F295 /* SwiftUIIntergrationProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIIntergrationProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 		9BBD8D0B2BBC561000A5F295 /* SwiftUIIntergrationProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				9BBD8D0C2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift */,
+				8CE8CF232C067310000D8590 /* UIKitViewModelTests.swift */,
 				8CE8CF112C066693000D8590 /* Mocks */,
 			);
 			path = SwiftUIIntergrationProjectTests;
@@ -700,8 +700,8 @@
 				8CE8CF142C066693000D8590 /* WeatherServiceMock.swift in Sources */,
 				8CE8CF132C066693000D8590 /* NetworkServiceMock.swift in Sources */,
 				8CE8CF202C066DEE000D8590 /* WeatherServiceMockURL.swift in Sources */,
+				8CE8CF242C067310000D8590 /* UIKitViewModelTests.swift in Sources */,
 				8CE8CF122C066693000D8590 /* Mockable.swift in Sources */,
-				9BBD8D0D2BBC561000A5F295 /* SwiftUIIntergrationProjectTests.swift in Sources */,
 				9BAA25772BC77D6B00AA42B3 /* TestObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
