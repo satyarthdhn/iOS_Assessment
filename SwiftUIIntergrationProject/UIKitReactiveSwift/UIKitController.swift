@@ -10,12 +10,10 @@ import UIKit
 final class UIKitController: RootViewController<UIKitView> {
   
   private let viewModel: UIKitViewModelProtocol
-  private var weatherForecastData: ForecastJSONData?
   private var isCurrentWeatherLoaded = false
+  private var isWeatherForecastLoaded = false
   
-  init(weatherForecastData: ForecastJSONData? = nil,
-       viewModel: UIKitViewModelProtocol) {
-    self.weatherForecastData = weatherForecastData
+  init(viewModel: UIKitViewModelProtocol) {
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
   }
@@ -30,11 +28,6 @@ final class UIKitController: RootViewController<UIKitView> {
     viewModel.viewDidLoad()
     customView.shouldShowUI(false)
     customView.shouldShowLoading(true)
-  }
-  
-  func updateForecastData(_ forecastData: ForecastJSONData) {
-    weatherForecastData = forecastData
-    customView.tableView.reloadData()
   }
   
   override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -76,15 +69,16 @@ private extension SetupHelper {
       DispatchQueue.main.async {
         self.customView.updateCurrentWeather(currentWeather)
         self.customView.shouldShowUI(true)
-        guard self.weatherForecastData != nil else { return }
+        guard self.isWeatherForecastLoaded else { return }
         self.customView.shouldShowLoading(false)
       }
     }
     
     viewModel.weatherForecastData.observe { [weak self] forecast in
       guard let forecast, let self else { return }
+      isWeatherForecastLoaded = true
       DispatchQueue.main.async {
-        self.updateForecastData(forecast)
+        self.customView.tableView.reloadData()
         self.customView.shouldShowUI(true)
         guard self.isCurrentWeatherLoaded else { return }
         self.customView.shouldShowLoading(false)
@@ -151,13 +145,13 @@ private typealias UITableViewDatasourceSetup = UIKitController
 extension UITableViewDatasourceSetup: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return weatherForecastData?.list.count ?? 0
+    return viewModel.weatherForecastData.value?.list.count ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier,
                                              for: indexPath)
-    let weather = weatherForecastData?.list[indexPath.row]
+    let weather = viewModel.weatherForecastData.value?.list[indexPath.row]
     let date = Date(timeIntervalSince1970: TimeInterval(weather?.dt ?? 0))
     let condition = weather?.weather.first?.description ?? ""
     let temperature = "temperature-value".localized(args: weather?.temperatures.temp ?? 0.0)

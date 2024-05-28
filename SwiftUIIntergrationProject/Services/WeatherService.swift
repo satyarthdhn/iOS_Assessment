@@ -5,7 +5,7 @@ import MapKit
 protocol WeatherServiceProtocol {
   static func getAddressLocation(of address: String) async throws -> CLLocation?
   func getCurrentWeather(of address: String) async throws -> CurrentWeatherJSONData
-  func get5DayWeatherForecast(of address: String) async throws -> ForecastJSONData
+  func getWeatherForecast(of address: String) async throws -> ForecastJSONData
 }
 
 struct WeatherService: WeatherServiceProtocol {
@@ -29,7 +29,7 @@ struct WeatherService: WeatherServiceProtocol {
     return result
   }
   
-  func get5DayWeatherForecast(of address: String) async throws -> ForecastJSONData {
+  func getWeatherForecast(of address: String) async throws -> ForecastJSONData {
     guard let cllocation = try await WeatherService.getAddressLocation(of: address), let url = weatherServiceURL.forecastURL(latitude: cllocation.coordinate.latitude, longitude: cllocation.coordinate.longitude) else { throw SimpleError.address }
     let result: ForecastJSONData = try await networkService.request(url: url)
     return result

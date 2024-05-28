@@ -20,7 +20,7 @@ protocol UIKitViewModelOutput {
   var error: Listenable<String> { get }
 }
 
-protocol UIKitViewModelProtocol: UIKitViewModelInput, UIKitViewModelOutput, AnyObject {}
+typealias UIKitViewModelProtocol = UIKitViewModelInput & UIKitViewModelOutput
 
 final class UIKitViewModel: UIKitViewModelProtocol {
   
@@ -44,7 +44,7 @@ final class UIKitViewModel: UIKitViewModelProtocol {
   }
   
   func fetchForecast() async throws -> ForecastJSONData {
-    return try await weatherService.get5DayWeatherForecast(of: currentAddress)
+    return try await weatherService.getWeatherForecast(of: currentAddress)
   }
   
   func updateCurrentAddress(to updatedAddress: String) {

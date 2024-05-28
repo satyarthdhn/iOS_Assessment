@@ -7,5 +7,5 @@
 
 import Foundation
 
-//TODO: Enter your Open weather API Key from: https://home.openweathermap.org/api_keys
+//This can be moved to xcconfig for security
 let openWeatherAPIKey: String = "e10789e8f1dfca805f809c84c849197d"
