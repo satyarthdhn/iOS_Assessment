@@ -9,12 +9,12 @@ import UIKit
 
 final class UIKitController: RootViewController<UIKitView> {
   
-  let viewModel: UIKitViewModel
-  var weatherForecastData: ForecastJSONData?
-  var isCurrentWeatherLoaded = false
+  private let viewModel: UIKitViewModelProtocol
+  private var weatherForecastData: ForecastJSONData?
+  private var isCurrentWeatherLoaded = false
   
   init(weatherForecastData: ForecastJSONData? = nil,
-       viewModel: UIKitViewModel) {
+       viewModel: UIKitViewModelProtocol) {
     self.weatherForecastData = weatherForecastData
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
@@ -95,7 +95,7 @@ private extension SetupHelper {
       guard errorString.count > 0 else { return }
       DispatchQueue.main.async {
         self?.customView.shouldShowLoading(false)
-        self?.showAlert(title: "Error", msg: errorString)
+        self?.showAlert(title: "error".localized, msg: errorString)
       }
     }
   }
@@ -114,7 +114,7 @@ extension UICollectionViewDataSourceSetup: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonCollectionViewCell.identifier,
                                                   for: indexPath) as! ButtonCollectionViewCell
-    cell.button.setTitle("address-numbered".localized(args: indexPath.item + 1) , for: .normal)
+    cell.setTitle("address-numbered".localized(args: indexPath.item + 1))
     return cell
   }
   
@@ -126,7 +126,8 @@ private typealias UICollectionViewDelegateFlowLayoutSetup = UIKitController
 extension UICollectionViewDelegateFlowLayoutSetup: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: Constant.collectionViewItemWidth, height: Constant.collectionViewItemHeight)
+    return CGSize(width: Constant.collectionViewItemWidth, 
+                  height: Constant.collectionViewItemHeight)
   }
   
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@testable import SwiftUIIntergrationProject
 extension CurrentWeatherJSONData {
   static func createMock() -> CurrentWeatherJSONData? {
     guard let data = jsonString.data(using: .utf8),

@@ -10,8 +10,14 @@ protocol WeatherServiceProtocol {
 
 struct WeatherService: WeatherServiceProtocol {
   
-  let networkService: NetworkServiceProtocol
-  let weatherServiceURL: WeatherServiceURLProtocol
+  private let networkService: NetworkServiceProtocol
+  private let weatherServiceURL: WeatherServiceURLProtocol
+  
+  init(networkService: NetworkServiceProtocol, 
+       weatherServiceURL: WeatherServiceURLProtocol) {
+    self.networkService = networkService
+    self.weatherServiceURL = weatherServiceURL
+  }
 
   static func getAddressLocation(of address: String) async throws -> CLLocation? {
     return try await AddressService.asyncCoordinate(from: address)

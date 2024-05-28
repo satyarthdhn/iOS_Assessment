@@ -9,7 +9,7 @@ import UIKit
 
 final class ButtonCollectionViewCell: UICollectionViewCell {
   
-  let button: UIButton = {
+  private let button: UIButton = {
     let btn = UIButton(type: .system)
     btn.backgroundColor = .systemBlue
     btn.setTitleColor(.white, for: .normal)
@@ -27,6 +27,10 @@ final class ButtonCollectionViewCell: UICollectionViewCell {
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     setup()
+  }
+  
+  func setTitle(_ title: String) {
+    button.setTitle(title , for: .normal)
   }
   
 }

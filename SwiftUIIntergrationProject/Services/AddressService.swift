@@ -11,10 +11,6 @@ import ReactiveSwift
 import Combine
 import RxSwift
 
-/*
- Examples of services that will return a CLLocation object using frameworks like RXSwift, ReactiveSwift, Combine, or just a completion
- TODO: use one of these services to convert an address string to CLLocation
- */
 struct AddressService {
   var coordinates: (String) -> SignalProducer<CLLocation?, SimpleError> = coordinates
   var asyncCoordinate: (String) async throws -> CLLocation? = asyncCoordinate

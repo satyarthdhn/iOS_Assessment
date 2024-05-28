@@ -24,8 +24,8 @@ protocol UIKitViewModelProtocol: UIKitViewModelInput, UIKitViewModelOutput, AnyO
 
 final class UIKitViewModel: UIKitViewModelProtocol {
   
-  var currentWeatherData: Listenable<CurrentWeatherJSONData?> = Listenable(nil)
-  var weatherForecastData: Listenable<ForecastJSONData?> = Listenable(nil)
+  let currentWeatherData: Listenable<CurrentWeatherJSONData?> = Listenable(nil)
+  let weatherForecastData: Listenable<ForecastJSONData?> = Listenable(nil)
   let error: Listenable<String> = Listenable("")
   private var currentAddress: String
   private let weatherService: WeatherServiceProtocol
