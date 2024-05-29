@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 let Addresses: [String] = [
   "8020 Towers Crescent Dr, Tysons, VA 22182",
   "333 W Wolf Point Plaza, Chicago, IL 60654",
