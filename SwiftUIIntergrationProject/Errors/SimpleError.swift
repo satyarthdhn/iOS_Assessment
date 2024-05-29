@@ -8,6 +8,7 @@
 import Foundation
 
 public enum SimpleError: Error, Equatable {
+  case noInternet
   case address
   case dataLoad(String)
   case dataParse(String?)

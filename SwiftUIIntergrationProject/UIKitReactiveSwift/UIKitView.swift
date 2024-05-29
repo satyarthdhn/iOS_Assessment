@@ -94,7 +94,7 @@ extension UIUpdateHelper {
   func updateCurrentWeather(_ currentWeather: CurrentWeatherJSONData) {
     locationLabel.text = currentWeather.name
     conditionLabel.text = currentWeather.weather.first?.description
-    temperatureLabel.text = "current-temp".localized(args: currentWeather.main.temp)
+    temperatureLabel.text = "current-temp".localized(args: Int(currentWeather.main.temp))
   }
   
   func updateTable() {

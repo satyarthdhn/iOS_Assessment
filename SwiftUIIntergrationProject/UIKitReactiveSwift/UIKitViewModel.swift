@@ -9,8 +9,8 @@ import Foundation
 
 protocol UIKitViewModelInput {
   func viewDidLoad()
-  func fetchCurrentWeather() async throws -> CurrentWeatherJSONData
-  func fetchForecast() async throws -> ForecastJSONData
+  func fetchCurrentWeather(for address: String) async throws -> CurrentWeatherJSONData
+  func fetchForecast(for address: String) async throws -> ForecastJSONData
   func updateCurrentAddress(to updatedAddress: String)
 }
 
@@ -39,12 +39,12 @@ final class UIKitViewModel: UIKitViewModelProtocol {
     setupData()
   }
   
-  func fetchCurrentWeather() async throws -> CurrentWeatherJSONData {
-    return try await weatherService.getCurrentWeather(of: currentAddress)
+  func fetchCurrentWeather(for address: String) async throws -> CurrentWeatherJSONData {
+    return try await weatherService.getCurrentWeather(of: address)
   }
   
-  func fetchForecast() async throws -> ForecastJSONData {
-    return try await weatherService.getWeatherForecast(of: currentAddress)
+  func fetchForecast(for address: String) async throws -> ForecastJSONData {
+    return try await weatherService.getWeatherForecast(of: address)
   }
   
   func updateCurrentAddress(to updatedAddress: String) {
@@ -68,7 +68,7 @@ private extension SetupHelper {
   func setupForecast() {
     Task {
       do {
-        let forecast = try await fetchForecast()
+        let forecast = try await fetchForecast(for: currentAddress)
         weatherForecastData.value = forecast
       } catch {
         parseError(error as? SimpleError)
@@ -79,7 +79,7 @@ private extension SetupHelper {
   func setupCurrentWeather() {
     Task {
       do {
-        let currentWeather = try await fetchCurrentWeather()
+        let currentWeather = try await fetchCurrentWeather(for: currentAddress)
         currentWeatherData.value = currentWeather
       } catch {
         parseError(error as? SimpleError)
@@ -96,6 +96,8 @@ private extension SetupHelper {
       error.value = "failed-to-load".localized
     case .dataParse:
       error.value = "failed-to-parse".localized
+    case .noInternet:
+      error.value = "no-internet".localized
     }
   }
   

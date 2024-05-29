@@ -61,7 +61,7 @@ extension AddressService {
     guard let location = try? await geocoder.geocodeAddressString(address)
       .compactMap( { $0.location } )
       .first(where: { $0.horizontalAccuracy >= 0 } )
-    else { throw SimpleError.address }
+    else { throw Connectivity.isConnectedToInternet ? SimpleError.address : SimpleError.noInternet }
     return location
   }
   

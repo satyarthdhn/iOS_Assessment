@@ -79,6 +79,7 @@ enum MainEnum: String, Codable {
   case clouds = "Clouds"
   case rain = "Rain"
   case smoke = "Smoke"
+  case thunderstorm = "Thunderstorm"
 }
 
   // MARK: - Wind

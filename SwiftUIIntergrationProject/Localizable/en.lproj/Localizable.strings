@@ -6,10 +6,11 @@
   
 */
 
-"current-temp" = "Current temperature : %fF";
+"current-temp" = "Current temperature : %d F";
 "address-numbered" = "Address %d";
-"temperature-value" = "Temperature: %fF";
+"temperature-value" = "Temperature: %dF";
 "failed-to-load" = "Failed to load data";
 "failed-to-parse" = "Failed to parse data";
 "address-not-correct" = "Address does not seem to be correct";
 "error" = "Error";
+"no-internet" = "No Internet";

@@ -10,11 +10,17 @@ import UIKit
 final class UIKitController: RootViewController<UIKitView> {
   
   private let viewModel: UIKitViewModelProtocol
-  private var isCurrentWeatherLoaded = false
-  private var isWeatherForecastLoaded = false
+  private var currentWeatherDataLoadStatus: DataLoadStatus = .loading
+  private var weatherForecastDataLoadStatus: DataLoadStatus = .loading
+  private let addresses: [String]
+  private let dateFormatter: DateFormatter
   
-  init(viewModel: UIKitViewModelProtocol) {
+  init(viewModel: UIKitViewModelProtocol,
+       addresses: [String],
+       dateFormatter: DateFormatter) {
     self.viewModel = viewModel
+    self.addresses = addresses
+    self.dateFormatter = dateFormatter
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -65,22 +71,22 @@ private extension SetupHelper {
   func bindViewModel() {
     viewModel.currentWeatherData.observe { [weak self] currentWeather in
       guard let currentWeather, let self else { return }
-      isCurrentWeatherLoaded = true
+      currentWeatherDataLoadStatus = .loaded
       DispatchQueue.main.async {
         self.customView.updateCurrentWeather(currentWeather)
         self.customView.shouldShowUI(true)
-        guard self.isWeatherForecastLoaded else { return }
+        guard self.weatherForecastDataLoadStatus == .loaded else { return }
         self.customView.shouldShowLoading(false)
       }
     }
     
-    viewModel.weatherForecastData.observe { [weak self] forecast in
-      guard let forecast, let self else { return }
-      isWeatherForecastLoaded = true
+    viewModel.weatherForecastData.observe { [weak self] _ in
+      guard let self else { return }
+      weatherForecastDataLoadStatus = .loaded
       DispatchQueue.main.async {
         self.customView.tableView.reloadData()
         self.customView.shouldShowUI(true)
-        guard self.isCurrentWeatherLoaded else { return }
+        guard self.currentWeatherDataLoadStatus == .loaded else { return }
         self.customView.shouldShowLoading(false)
       }
     }
@@ -94,6 +100,16 @@ private extension SetupHelper {
     }
   }
   
+  func getTableViewRowData(for indexPath: IndexPath) -> String {
+    let weather = viewModel.weatherForecastData.value?.list[indexPath.row]
+    let date = Date(timeIntervalSince1970: TimeInterval(weather?.dt ?? 0))
+    let dateString = dateFormatter.string(from: date)
+    let condition = weather?.weather.first?.description ?? ""
+    let temperature = "temperature-value".localized(args: Int(weather?.temperatures.temp ?? 0.0))
+                    
+    return "\(dateString)\n\(condition)\n\(temperature)"
+  }
+  
 }
 
 // MARK: UICollectionViewDataSourceSetup
@@ -102,12 +118,12 @@ private typealias UICollectionViewDataSourceSetup = UIKitController
 extension UICollectionViewDataSourceSetup: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return Addresses.count
+    return addresses.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonCollectionViewCell.identifier,
-                                                  for: indexPath) as! ButtonCollectionViewCell
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ButtonCollectionViewCell.identifier,
+                                                        for: indexPath) as? ButtonCollectionViewCell else { return ButtonCollectionViewCell() }
     cell.setTitle("address-numbered".localized(args: indexPath.item + 1))
     return cell
   }
@@ -134,7 +150,10 @@ extension UICollectionViewDelegateSetup: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     customView.shouldShowUI(false)
     customView.shouldShowLoading(true)
-    viewModel.updateCurrentAddress(to: Addresses[indexPath.row])
+    currentWeatherDataLoadStatus = .loading
+    weatherForecastDataLoadStatus = .loading
+    viewModel.updateCurrentAddress(to: addresses[indexPath.row])
+    customView.tableView.setContentOffset(.zero, animated: true)
   }
   
 }
@@ -153,11 +172,12 @@ extension UITableViewDatasourceSetup: UITableViewDataSource {
                                              for: indexPath)
     let weather = viewModel.weatherForecastData.value?.list[indexPath.row]
     let date = Date(timeIntervalSince1970: TimeInterval(weather?.dt ?? 0))
+    let dateString = dateFormatter.string(from: date)
     let condition = weather?.weather.first?.description ?? ""
-    let temperature = "temperature-value".localized(args: weather?.temperatures.temp ?? 0.0)
+    let temperature = "temperature-value".localized(args: Int(weather?.temperatures.temp ?? 0.0))
                     
     cell.textLabel?.numberOfLines = 0
-    cell.textLabel?.text = "\(date)\n\(condition)\n\(temperature)"
+    cell.textLabel?.text = "\(dateString)\n\(condition)\n\(temperature)"
     return cell
   }
   

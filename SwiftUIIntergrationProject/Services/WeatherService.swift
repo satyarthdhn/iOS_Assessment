@@ -24,13 +24,13 @@ struct WeatherService: WeatherServiceProtocol {
   }
   
   func getCurrentWeather(of address: String) async throws -> CurrentWeatherJSONData {
-    guard let cllocation = try await WeatherService.getAddressLocation(of: address), let url = weatherServiceURL.currentWeatherURL(location: cllocation) else { throw SimpleError.address }
+    guard let cllocation = try await WeatherService.getAddressLocation(of: address), let url = weatherServiceURL.currentWeatherURL(location: cllocation) else { throw Connectivity.isConnectedToInternet ? SimpleError.address : SimpleError.noInternet }
     let result: CurrentWeatherJSONData = try await networkService.request(url: url)
     return result
   }
   
   func getWeatherForecast(of address: String) async throws -> ForecastJSONData {
-    guard let cllocation = try await WeatherService.getAddressLocation(of: address), let url = weatherServiceURL.forecastURL(latitude: cllocation.coordinate.latitude, longitude: cllocation.coordinate.longitude) else { throw SimpleError.address }
+    guard let cllocation = try await WeatherService.getAddressLocation(of: address), let url = weatherServiceURL.forecastURL(latitude: cllocation.coordinate.latitude, longitude: cllocation.coordinate.longitude) else { throw Connectivity.isConnectedToInternet ? SimpleError.address : SimpleError.noInternet }
     let result: ForecastJSONData = try await networkService.request(url: url)
     return result
   }

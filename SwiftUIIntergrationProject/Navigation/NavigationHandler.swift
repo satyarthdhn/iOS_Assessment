@@ -20,10 +20,16 @@ extension UIViewController {
   
   private func navigateUIKitView() {
     let currentAddress = Addresses.first ?? ""
-    let weatherService = WeatherService(networkService: NetworkService(), weatherServiceURL: WeatherServiceURL())
+    let weatherService = WeatherService(networkService: NetworkService(),
+                                        weatherServiceURL: WeatherServiceURL())
     let viewModel = UIKitViewModel(weatherService: weatherService,
                                    currentAddress: currentAddress)
-    let controller = UIKitController(viewModel: viewModel)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "M/dd/yy h:mm a"
+    dateFormatter.timeZone = .current
+    let controller = UIKitController(viewModel: viewModel,
+                                     addresses: Addresses,
+                                     dateFormatter: dateFormatter)
     navigationController?.pushViewController(controller, animated: true)
   }
   

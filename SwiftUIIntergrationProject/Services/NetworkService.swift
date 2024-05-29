@@ -19,6 +19,9 @@ final class NetworkService: NetworkServiceProtocol {
   }
   
   func request<T: Decodable>(url: URL) async throws -> T {
+    guard Connectivity.isConnectedToInternet else {
+      throw SimpleError.noInternet
+    }
     let (data, response) = try await session.data(from: url)
     
     guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
